@@ -1,0 +1,18 @@
+diplomacy:
+  build: .
+  links: 
+    - db
+    - mail:example.com
+  ports:
+    - 8080:80
+  stdin_open: true
+  tty: true
+db:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: diplomacy
+mail:  
+  image: catatnight/postfix
+  environment:
+    maildomain: mail.example.com
+    smtp_user: admin:admin,mod:mod
