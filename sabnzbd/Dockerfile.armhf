@@ -1,0 +1,17 @@
+FROM armhf/alpine:latest
+
+# users
+RUN adduser -h /home/media -D media
+RUN mkdir -p /home/media && chown -R media:media /home/media
+
+# install
+COPY install.sh install.sh
+RUN sh install.sh
+
+WORKDIR /home/media
+USER media
+EXPOSE 8080
+VOLUME /home/media
+VOLUME /mnt/media
+
+CMD ["python", "/usr/share/sabnzbd/SABnzbd.py", "-s", "0.0.0.0:8080"]
