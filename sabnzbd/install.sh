@@ -32,7 +32,7 @@ cd ~
 
 # sabnzbd
 mkdir -p /usr/share/sabnzbd
-wget -qO src.tar.gz https://github.com/sabnzbd/sabnzbd/releases/download/0.7.20/SABnzbd-0.7.20-src.tar.gz
+wget -qO src.tar.gz https://github.com/sabnzbd/sabnzbd/releases/download/1.0.0/SABnzbd-1.0.0-src.tar.gz
 tar -xvzf src.tar.gz --strip-components=1 --directory /usr/share/sabnzbd
 rm src.tar.gz 
 

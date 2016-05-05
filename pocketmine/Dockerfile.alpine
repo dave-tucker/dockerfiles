@@ -1,0 +1,6 @@
+FROM alpine:3.3
+MAINTAINER Dave Tucker <dave@dtucker.co.uk>
+
+# Compile Deps
+RUN apk add --no-cache make autoconf automake libtool bison g++ openssl
+

@@ -1,13 +1,10 @@
 FROM alpine:latest
 
-RUN apk add --no-cache git python libxml2
-RUN apk add --no-cache musl-dev python-dev py-pip gcc libffi-dev openssl-dev
-RUN pip install pyopenssl
-
-RUN git clone https://github.com/RuudBurger/CouchPotatoServer.git /usr/share/couchpotato
-
+COPY install.sh install.sh
+RUN sh install.sh
+ 
 EXPOSE 5050
-VOLUME /home/media
+VOLUME /root
 VOLUME /mnt/media
 
-ENTRYPOINT [ "python", "/usr/share/couchpotato/CouchPotato.py", "--console_log", "--config_file=/home/media/config.ini", "--data_dir=/home/media/data" ]	
+CMD [ "python", "/usr/share/couchpotato/CouchPotato.py", "--debug", "--console_log", "--config_file=/root/config.ini", "--data_dir=/root/data" ]	
