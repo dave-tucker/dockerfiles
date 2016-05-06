@@ -1,0 +1,1 @@
+docker run -it -v /Users/dave/dev/dockerfiles/pocketmine/server.properties:/pocketmine/server.properties -v /Users/dave/dev/dockerfiles/pocketmine/pocketmine.yml:/pocketmine/pocketmine.yml -v /Users/dave/dev/dockerfiles/pocketmine/world:/pocketmine/worlds/world  pocketmine

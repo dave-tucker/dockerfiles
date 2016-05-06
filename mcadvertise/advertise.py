@@ -15,5 +15,5 @@ print("Broadcasting Minecraft servers to LAN")
 while 1:
         for server in servers:
                 msg = "[MOTD]%s[/MOTD][AD]%d[/AD]" % (server[0], server[1])
-                sock.sendto(msg, (BROADCAST_IP, BROADCAST_PORT))
+                sock.sendto(msg.encode(), (BROADCAST_IP, BROADCAST_PORT))
         time.sleep(1.5)
